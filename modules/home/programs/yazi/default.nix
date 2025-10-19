@@ -93,7 +93,7 @@
         ];
         img = [
           {
-            run = ''feh "$@" '';
+            run = ''qimgv "$@" '';
             orphan = true;
             for = "unix";
           }

@@ -85,7 +85,10 @@
     },
     "flake-parts": {
       "inputs": {
-        "nixpkgs-lib": ["nur", "nixpkgs"]
+        "nixpkgs-lib": [
+          "nur",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1733312601,
@@ -103,7 +106,10 @@
     },
     "flake-parts_2": {
       "inputs": {
-        "nixpkgs-lib": ["stylix", "nixpkgs"]
+        "nixpkgs-lib": [
+          "stylix",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1749398372,
@@ -154,7 +160,9 @@
     },
     "home-manager": {
       "inputs": {
-        "nixpkgs": ["nixpkgs"]
+        "nixpkgs": [
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1758463745,
@@ -177,11 +185,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1760229830,
-        "narHash": "sha256-a3nc8Pna6qp2klK0i9mXSWlo1iGca4+B/llXUtPHXEg=",
+        "lastModified": 1760913585,
+        "narHash": "sha256-VpzEDGs2iRdasG83iZ6M39AhZTAqjuQhnwuAfc7QbFw=",
         "owner": "viitorags",
         "repo": "nvim",
-        "rev": "e86b6be481cf2b4b276278088608e810d9aaa303",
+        "rev": "9572f558fbb2ed93904ec82bc86398b7ed19433b",
         "type": "github"
       },
       "original": {
@@ -214,7 +222,9 @@
       "inputs": {
         "niri-stable": "niri-stable",
         "niri-unstable": "niri-unstable",
-        "nixpkgs": ["nixpkgs"],
+        "nixpkgs": [
+          "nixpkgs"
+        ],
         "nixpkgs-stable": "nixpkgs-stable",
         "xwayland-satellite-stable": "xwayland-satellite-stable",
         "xwayland-satellite-unstable": "xwayland-satellite-unstable"
@@ -379,8 +389,12 @@
     },
     "noctalia": {
       "inputs": {
-        "nixpkgs": ["nixpkgs-unstable"],
-        "quickshell": ["quickshell"],
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ],
+        "quickshell": [
+          "quickshell"
+        ],
         "systems": "systems"
       },
       "locked": {
@@ -400,7 +414,9 @@
     "nur": {
       "inputs": {
         "flake-parts": "flake-parts",
-        "nixpkgs": ["nixpkgs-unstable"]
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
       },
       "locked": {
         "lastModified": 1760407133,
@@ -418,8 +434,14 @@
     },
     "nur_2": {
       "inputs": {
-        "flake-parts": ["stylix", "flake-parts"],
-        "nixpkgs": ["stylix", "nixpkgs"],
+        "flake-parts": [
+          "stylix",
+          "flake-parts"
+        ],
+        "nixpkgs": [
+          "stylix",
+          "nixpkgs"
+        ],
         "treefmt-nix": "treefmt-nix"
       },
       "locked": {
@@ -438,7 +460,9 @@
     },
     "quickshell": {
       "inputs": {
-        "nixpkgs": ["nixpkgs-unstable"]
+        "nixpkgs": [
+          "nixpkgs-unstable"
+        ]
       },
       "locked": {
         "lastModified": 1756352679,
@@ -470,7 +494,10 @@
     },
     "rust-overlay": {
       "inputs": {
-        "nixpkgs": ["niri-blurry", "nixpkgs"]
+        "nixpkgs": [
+          "niri-blurry",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1757989933,
@@ -632,7 +659,11 @@
     },
     "treefmt-nix": {
       "inputs": {
-        "nixpkgs": ["stylix", "nur", "nixpkgs"]
+        "nixpkgs": [
+          "stylix",
+          "nur",
+          "nixpkgs"
+        ]
       },
       "locked": {
         "lastModified": 1733222881,

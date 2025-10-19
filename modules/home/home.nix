@@ -15,9 +15,10 @@
     homeDirectory = "/home/vitor";
     stateVersion = "25.05";
     packages = with pkgs; [
-      xfce.thunar
+      # xfce.thunar
       gnome.gvfs
-      xfce.tumbler
+      # xfce.tumbler
+      nautilus
       kitty.terminfo
       bc
       ibus
@@ -25,11 +26,13 @@
       ueberzug
       unstable.pokemon-colorscripts
       gowall
+      qimgv
     ];
 
     sessionVariables = {
       GTK_IM_MODULE = "ibus";
       TERMINAL = "wezterm";
+      EDITOR = "nvim";
     };
 
     file."Pictures/Wallpapers/".source = ../../assets/wallpapers;

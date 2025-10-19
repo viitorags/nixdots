@@ -6,17 +6,14 @@
 
 
 ## Previews
-<table>
-    <tr>
-        <td><img src="./assets/previews/Screenshot from 2025-10-15 18-40-30.png" width="1000" /></td>
-    </tr>
-    <tr>
-        <td><img src="./assets/previews/Screenshot from 2025-10-15 18-40-50.png" width="1000" /></td>
-    </tr>
-    <tr>
-        <td><img src="./assets/previews/Screenshot from 2025-10-15 18-41-39.png" width="1000" /></td>
-    </tr>
-</table>
+![Preview1](./assets/previews/Screenshot%20from%202025-10-19%2019-48-47.png)
+![Preview2](./assets/previews/Screenshot%20from%202025-10-19%2019-49-36.png)
+![Preview3](./assets/previews/Screenshot%20from%202025-10-19%2020-01-28.png)
+
+<details>
+  <summary>SDDM</summary>
+  <img src="./assets/previews/Screenshot from 2025-10-19 19-52-56.png"/>
+</details>
 
 ## Packages
 - **Window Manager** • [Niri](https://github.com/YaLTeR/niri/) Scrolleable WM!

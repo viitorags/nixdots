@@ -87,7 +87,7 @@
 
     spawn-at-startup "dbus-update-activation-environment --systemd --all"
     spawn-at-startup "eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)"
-    spawn-at-startup "${pkgs.polkit_gnome}/bin/polkit-gnome-authentication-agent-1"
+    spawn-at-startup "${pkgs.polkit_gnome}/libexec/polkit-gnome-authentication-agent-1"
     spawn-at-startup "noctalia-shell"
     spawn-at-startup "xwayland-satellite"
     spawn-at-startup "wl-paste --type text --watch cliphist store"
@@ -133,7 +133,7 @@
             inactive-color "#505050"
         }
 
-        geometry-corner-radius 15
+        geometry-corner-radius 10
         clip-to-geometry true
     }
 

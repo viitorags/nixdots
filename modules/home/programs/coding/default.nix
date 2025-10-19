@@ -11,6 +11,7 @@
     vscode-fhs
     unstable.dbeaver-bin
     gh-notify
+    unstable.github-copilot-cli
     lazygit
     gh
     delta
@@ -27,7 +28,7 @@
     go
     php
     php.packages.composer
-    (callPackage ./php-cs-fixer.nix { })
+    (callPackage ../../../../pkgs/php-cs-fixer/package.nix { })
     laravel
 
     # LSPs
@@ -56,5 +57,12 @@
     black
     shfmt
     nodePackages.prettier
+
+    # Lints
+    nodePackages.eslint
+    shellcheck
+    hadolint
+    golangci-lint
+    php.packages.php-codesniffer
   ];
 }

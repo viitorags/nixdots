@@ -53,13 +53,19 @@
         "backgroundOpacity" = 1;
         "density" = "comfortable";
         "floating" = true;
-        "marginHorizontal" = 1;
+        "marginHorizontal" = 0.2;
         "marginVertical" = 0.2;
         "monitors" = [ ];
-        "position" = "top";
+        "position" = "left";
         "showCapsule" = true;
         "widgets" = {
-          "center" = [
+          "center" = [ ];
+          "left" = [
+            {
+              "hideUnoccupied" = false;
+              "id" = "Workspace";
+              "labelMode" = "none";
+            }
             {
               "id" = "SystemMonitor";
               "showCpuTemp" = true;
@@ -72,21 +78,6 @@
             {
               "displayMode" = "forceOpen";
               "id" = "KeyboardLayout";
-            }
-          ];
-          "left" = [
-            {
-              "hideUnoccupied" = false;
-              "id" = "Workspace";
-              "labelMode" = "none";
-            }
-            {
-              "hideMode" = "transparent";
-              "id" = "MediaMini";
-              "scrollingMode" = "hover";
-              "showAlbumArt" = false;
-              "showVisualizer" = false;
-              "visualizerType" = "linear";
             }
           ];
           "right" = [
@@ -197,10 +188,10 @@
         "compactLockScreen" = false;
         "dimDesktop" = false;
         "forceBlackScreenCorners" = false;
-        "radiusRatio" = 1;
+        "radiusRatio" = 0.5;
         "scaleRatio" = 0.8;
-        "screenRadiusRatio" = 1;
-        "showScreenCorners" = true;
+        "screenRadiusRatio" = 0.5;
+        "showScreenCorners" = false;
       };
       "hooks" = {
         "darkModeChange" = "";
@@ -214,7 +205,7 @@
         "useFahrenheit" = false;
       };
       "network" = {
-        "wifiEnabled" = false;
+        "wifiEnabled" = true;
       };
       "nightLight" = {
         "autoSchedule" = true;
@@ -274,9 +265,9 @@
         "qt" = false;
       };
       "ui" = {
-        "fontDefault" = "Sarasa Mono CL";
+        "fontDefault" = "Maple Mono NF";
         "fontDefaultScale" = 1;
-        "fontFixed" = "Sarasa Mono CL";
+        "fontFixed" = "Maple Mono NF";
         "fontFixedScale" = 1;
         "idleInhibitorEnabled" = false;
         "tooltipsEnabled" = true;
@@ -293,7 +284,7 @@
           {
             "directory" = "/home/vitor/Pictures/Wallpapers";
             "name" = "LVDS-1";
-            "wallpaper" = "/home/vitor/Pictures/Wallpapers/Anime-Purple-eyes.png";
+            "wallpaper" = "/home/vitor/.wallpaper";
           }
         ];
         "randomEnabled" = false;

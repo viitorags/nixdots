@@ -8,7 +8,6 @@
     ./yazi
     ./btop
     ./zsh
-    ./feh
     ./cava
     ./zathura
     ./lazygit

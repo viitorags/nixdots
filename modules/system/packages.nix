@@ -1,4 +1,4 @@
-{ pkgs, unstable, ... }:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     # Desktop apps
@@ -60,8 +60,6 @@
     libsForQt5.qt5ct
     libsForQt5.qtgraphicaleffects
     kdePackages.qt6ct
-    # kdePackages.kirigami
-    # kdePackages.kirigami-addons
     kdePackages.qtstyleplugin-kvantum
     cowsay
     cmatrix
@@ -71,6 +69,6 @@
   fonts.packages = with pkgs; [
     font-awesome
     nerd-fonts.jetbrains-mono
-    sarasa-gothic
+    maple-mono.NF
   ];
 }

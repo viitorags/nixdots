@@ -11,20 +11,20 @@
       config.enable_wayland = true
       config.enable_tab_bar = false
       config.window_close_confirmation = "NeverPrompt"
-      config.font = wezterm.font("Sarasa Term TC", { weight = "DemiBold", italic = false })
+      config.font = wezterm.font("Maple Mono NF", { weight = "DemiBold", italic = false })
       config.font_rules = {
         {
           intensity = "Half",
           italic = false,
-          font = wezterm.font("Sarasa Mono TC", { weight = "Bold", stretch = "Normal" }),
+          font = wezterm.font("Maple Mono NF", { weight = "Bold", stretch = "Normal" }),
         },
         {
           intensity = "Half",
           italic = true,
-          font = wezterm.font("Sarasa Mono TC", { weight = "Bold", stretch = "Normal", style = "Italic" }),
+          font = wezterm.font("Maple Mono NF", { weight = "Bold", stretch = "Normal", style = "Italic" }),
         },
       }
-      config.font_size = 13
+      config.font_size = 11.8
       config.custom_block_glyphs = false
       config.mouse_wheel_scrolls_tabs = false
       config.warn_about_missing_glyphs = false
@@ -44,6 +44,14 @@
               key = "v",
               mods = "ALT|SHIFT",
               action = wezterm.action.SplitVertical({ domain = "CurrentPaneDomain" }),
+          },
+          {
+              key = "c",
+              mods = "ALT|SHIFT",
+              action = wezterm.action.SplitPane({
+                direction = "Left",
+                command = { args = { "copilot" } },
+              }),
           },
           {
               key = "h",

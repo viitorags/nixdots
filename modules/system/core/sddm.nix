@@ -4,8 +4,7 @@
 }:
 let
   sddm-astronaut = pkgs.sddm-astronaut.override {
-    # embeddedTheme = "pixel_sakura_static";
-    embeddedTheme = "purple_leaves";
+    embeddedTheme = "japanese_aesthetic";
     # themeConfig = {
     # };
   };
