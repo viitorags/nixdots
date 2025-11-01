@@ -34,6 +34,8 @@
     settings = {
       "appLauncher" = {
         "backgroundOpacity" = 1;
+        "customLaunchPrefix" = "";
+        "customLaunchPrefixEnabled" = false;
         "enableClipboardHistory" = true;
         "pinnedExecs" = [ ];
         "position" = "center";
@@ -52,16 +54,67 @@
       "bar" = {
         "backgroundOpacity" = 1;
         "density" = "comfortable";
-        "floating" = true;
-        "marginHorizontal" = 0.2;
-        "marginVertical" = 0.2;
+        "floating" = false;
+        "marginHorizontal" = 0.25;
+        "marginVertical" = 0.25;
         "monitors" = [ ];
         "position" = "left";
         "showCapsule" = true;
         "widgets" = {
-          "center" = [ ];
+          "center" = [
+            {
+              "id" = "Spacer";
+              "width" = 20;
+            }
+            {
+              "displayMode" = "forceOpen";
+              "id" = "KeyboardLayout";
+            }
+          ];
           "left" = [
             {
+              "customIconPath" = "";
+              "icon" = "";
+              "id" = "ControlCenter";
+              "useDistroLogo" = true;
+            }
+            {
+              "customFont" = "";
+              "formatHorizontal" = "HH:mm ddd, MMM dd";
+              "formatVertical" = "HH mm - dd MM";
+              "id" = "Clock";
+              "useCustomFont" = false;
+              "usePrimaryColor" = true;
+            }
+            {
+              "displayMode" = "onhover";
+              "id" = "Brightness";
+            }
+            {
+              "displayMode" = "onhover";
+              "id" = "Volume";
+            }
+            {
+              "displayMode" = "onhover";
+              "id" = "Battery";
+              "warningThreshold" = 30;
+            }
+            {
+              "hideWhenZero" = true;
+              "id" = "NotificationHistory";
+              "showUnreadBadge" = true;
+            }
+            { "id" = "ScreenRecorder"; }
+            { "id" = "WallpaperSelector"; }
+            {
+              "blacklist" = [ ];
+              "colorizeIcons" = false;
+              "id" = "Tray";
+            }
+          ];
+          "right" = [
+            {
+              "characterCount" = 1;
               "hideUnoccupied" = false;
               "id" = "Workspace";
               "labelMode" = "none";
@@ -75,62 +128,24 @@
               "showMemoryUsage" = true;
               "showNetworkStats" = false;
             }
-            {
-              "displayMode" = "forceOpen";
-              "id" = "KeyboardLayout";
-            }
-          ];
-          "right" = [
-            {
-              "blacklist" = [ ];
-              "colorizeIcons" = true;
-              "id" = "Tray";
-            }
-            { "id" = "ScreenRecorder"; }
-            { "id" = "WallpaperSelector"; }
-            {
-              "hideWhenZero" = true;
-              "id" = "NotificationHistory";
-              "showUnreadBadge" = true;
-            }
-            {
-              "displayMode" = "onhover";
-              "id" = "Battery";
-              "warningThreshold" = 30;
-            }
-            {
-              "displayMode" = "onhover";
-              "id" = "Volume";
-            }
-            {
-              "displayMode" = "onhover";
-              "id" = "Brightness";
-            }
-            {
-              "customFont" = "";
-              "formatHorizontal" = "HH:mm dd.MM.yyyy";
-              "formatVertical" = "HH mm - dd MM";
-              "id" = "Clock";
-              "useCustomFont" = false;
-              "usePrimaryColor" = true;
-            }
-            {
-              "customIconPath" = "";
-              "icon" = "";
-              "id" = "ControlCenter";
-              "useDistroLogo" = true;
-            }
           ];
         };
       };
+      "battery" = {
+        "chargingMode" = 0;
+      };
       "brightness" = {
         "brightnessStep" = 5;
+        "enforceMinimum" = true;
       };
       "colorSchemes" = {
         "darkMode" = true;
         "generateTemplatesForPredefined" = true;
+        "manualSunrise" = "06:30";
+        "manualSunset" = "18:30";
         "matugenSchemeType" = "scheme-fruit-salad";
         "predefinedScheme" = "Noctalia (default)";
+        "schedulingMode" = "off";
         "useWallpaperColors" = false;
       };
       "controlCenter" = {
@@ -180,18 +195,21 @@
         "monitors" = [ ];
         "onlySameOutput" = true;
         "pinnedApps" = [ ];
+        "size" = 1;
       };
       "general" = {
         "animationDisabled" = false;
         "animationSpeed" = 1;
         "avatarImage" = "/home/vitor/.face";
-        "compactLockScreen" = false;
+        "compactLockScreen" = true;
         "dimDesktop" = false;
         "forceBlackScreenCorners" = false;
-        "radiusRatio" = 0.5;
+        "language" = "";
+        "lockOnSuspend" = true;
+        "radiusRatio" = 0.45;
         "scaleRatio" = 0.8;
-        "screenRadiusRatio" = 0.5;
-        "showScreenCorners" = false;
+        "screenRadiusRatio" = 0.55;
+        "showScreenCorners" = true;
       };
       "hooks" = {
         "darkModeChange" = "";
@@ -199,10 +217,13 @@
         "wallpaperChange" = "cp $1 ~/.wallpaper || rm -rf ~/.wallpaper && cp $1 ~/.wallpaper";
       };
       "location" = {
-        "name" = "Goiânia";
+        "analogClockInCalendar" = false;
+        "name" = "Goiânia, GO";
+        "showCalendarEvents" = true;
         "showWeekNumberInCalendar" = false;
         "use12hourFormat" = false;
         "useFahrenheit" = false;
+        "weatherEnabled" = true;
       };
       "network" = {
         "wifiEnabled" = true;
@@ -217,22 +238,21 @@
         "nightTemp" = "4000";
       };
       "notifications" = {
-        "alwaysOnTop" = false;
         "criticalUrgencyDuration" = 15;
         "doNotDisturb" = false;
-        "lastSeenTs" = 0;
         "location" = "top_right";
         "lowUrgencyDuration" = 3;
         "monitors" = [ ];
         "normalUrgencyDuration" = 8;
+        "overlayLayer" = true;
         "respectExpireTimeout" = false;
       };
       "osd" = {
-        "alwaysOnTop" = false;
         "autoHideMs" = 2000;
         "enabled" = true;
         "location" = "top_right";
         "monitors" = [ ];
+        "overlayLayer" = true;
       };
       "screenRecorder" = {
         "audioCodec" = "opus";
@@ -245,7 +265,8 @@
         "videoCodec" = "h264";
         "videoSource" = "portal";
       };
-      "settingsVersion" = 15;
+      "settingsVersion" = 16;
+      "setupCompleted" = true;
       "templates" = {
         "discord" = false;
         "discord_armcord" = false;
@@ -263,18 +284,19 @@
         "kitty" = false;
         "pywalfox" = false;
         "qt" = false;
+        "vicinae" = false;
       };
       "ui" = {
-        "fontDefault" = "Maple Mono NF";
+        "fontDefault" = "MonaspiceRn Nerd Font";
         "fontDefaultScale" = 1;
-        "fontFixed" = "Maple Mono NF";
+        "fontFixed" = "MonaspiceRn Nerd Font Mono";
         "fontFixedScale" = 1;
-        "idleInhibitorEnabled" = false;
+        "panelsOverlayLayer" = true;
         "tooltipsEnabled" = true;
       };
       "wallpaper" = {
         "defaultWallpaper" =
-          "/nix/store/3yyvlqjsk20hz11d2xv650897l3qan9d-noctalia-shell-c336387a1830b708ca28dd3e1af1c2236d1c9acd/share/noctalia-shell/Assets/Wallpaper/noctalia.png";
+          "/nix/store/2lpnigvpbcvwzihkk6jz2js1bq1zhz1k-noctalia-shell-1067ffe7a34067816fc72914ea0a71aa0dbdacc6/share/noctalia-shell/Assets/Wallpaper/noctalia.png";
         "directory" = "/home/vitor/Pictures/Wallpapers";
         "enableMultiMonitorDirectories" = false;
         "enabled" = true;

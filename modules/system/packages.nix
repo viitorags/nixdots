@@ -5,8 +5,9 @@
     telegram-desktop
     obsidian
     discord
-    firefox
     kdePackages.ark
+    vivaldi
+    firefox
     (brave.override {
       commandLineArgs = [
         "--password-store=gnome"
@@ -68,7 +69,7 @@
   # Fonts
   fonts.packages = with pkgs; [
     font-awesome
-    nerd-fonts.jetbrains-mono
-    maple-mono.NF
+    nerd-fonts.monaspace
+    monaspace
   ];
 }

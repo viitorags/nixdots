@@ -15,11 +15,8 @@
     homeDirectory = "/home/vitor";
     stateVersion = "25.05";
     packages = with pkgs; [
-      # xfce.thunar
       gnome.gvfs
-      # xfce.tumbler
       nautilus
-      kitty.terminfo
       bc
       ibus
       imagemagick
@@ -27,6 +24,7 @@
       unstable.pokemon-colorscripts
       gowall
       qimgv
+      krita
     ];
 
     sessionVariables = {

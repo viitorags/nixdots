@@ -21,7 +21,7 @@
       sansSerif = config.stylix.fonts.monospace;
       emoji = config.stylix.fonts.monospace;
       monospace = {
-        name = "Maple Mono NF";
+        name = "Monaspace Radon";
       };
     };
 

@@ -83,6 +83,7 @@
     environment {
         SSH_AUTH_SOCK "/run/user/1000/keyring/ssh"
         DISPLAY ":0"
+        QS_ICON_THEME "Papirus-Dark"
     }
 
     spawn-at-startup "dbus-update-activation-environment --systemd --all"
@@ -137,7 +138,9 @@
         clip-to-geometry true
     }
 
-    window-rule { match app-id="r#\"^org\\.wezfurlong\\.wezterm$\"#"; }
+    window-rule { 
+        match app-id="r#\"^org\\.wezfurlong\\.wezterm$\"#"; 
+    }
 
     window-rule {
         match is-floating=true
@@ -162,6 +165,7 @@
         match app-id="firefox"
         match app-id="chromium-browser"
         match app-id="edge"
+        match app-id="brave-browser"
         open-maximized true
     }
 
@@ -226,7 +230,7 @@
     }
 
     window-rule {
-        match app-id="org.gnome.FileRoller"
+        match app-id="org.gnome.Nautilus"
         open-floating true
     }
 
