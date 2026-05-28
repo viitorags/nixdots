@@ -12,7 +12,7 @@
     syntaxHighlighting.enable = true;
     shellAliases =
       let
-        flakeDir = "~/nixdots";
+        flakeDir = "~/dotfiles";
         host =
           if hostName != null && hostName != "" then
             hostName

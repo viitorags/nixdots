@@ -12,7 +12,26 @@ in
     enable = true;
     polarity = "dark";
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+
+    # base16Scheme = {
+    #   base00 = "#1a1a2e";
+    #   base01 = "#1e1e3f";
+    #   base02 = "#2d2b55";
+    #   base03 = "#4a3568";
+    #   base04 = "#b3b3b3";
+    #   base05 = "#ffffff";
+    #   base06 = "#d9d9d9";
+    #   base07 = "#f8f8ff";
+    #   base08 = "#fe4450";
+    #   base09 = "#ff9f1c";
+    #   base0A = "#ffd000";
+    #   base0B = "#72f1b8";
+    #   base0C = "#03edf9";
+    #   base0D = "#0097b2";
+    #   base0E = "#c792ea";
+    #   base0F = "#ff7edb";
+    # };
 
     # base16Scheme = {
     #   base00 = "#1d2021";
@@ -41,6 +60,7 @@ in
       cava.enable = false;
       noctalia-shell.enable = false;
       starship.enable = false;
+      alacritty.enable = false;
       dank-material-shell.enable = false;
     };
 
@@ -49,7 +69,7 @@ in
       sansSerif = font;
       emoji = font;
       monospace = {
-        name = "Sarasa Mono TC Nerd Font";
+        name = "JetBrainsMono Nerd Font";
       };
     };
 

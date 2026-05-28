@@ -34,6 +34,30 @@
     "libata.noacpi=1"
   ];
 
+  hardware.firmware = [
+    (pkgs.writeTextDir "lib/firmware/hda-jack-retask.fw" ''
+      [codec]
+      0x10ec0662 0x00000000 2
+
+      [pincfg]
+      0x12 0x411111f0
+      0x14 0x01014410
+      0x15 0x411111f0
+      0x16 0x411111f0
+      0x18 0x01a19c30
+      0x19 0x0321403f
+      0x1a 0x0181343f
+      0x1b 0x0221401f
+      0x1c 0x411111f0
+      0x1d 0x4004c601
+      0x1e 0x01445120
+    '')
+  ];
+
+  boot.extraModprobeConfig = ''
+    options snd-hda-intel patch=hda-jack-retask.fw
+  '';
+
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
     fsType = "vfat";

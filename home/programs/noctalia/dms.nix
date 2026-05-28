@@ -6,7 +6,7 @@
 }:
 {
   programs.dank-material-shell = {
-    enable = false;
+    enable = true;
     quickshell.package = inputs.quickshell.packages."${pkgs.stdenv.hostPlatform.system}".default;
     dgop.package = unstable.dgop;
 

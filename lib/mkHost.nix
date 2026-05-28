@@ -72,6 +72,7 @@ nixpkgs.lib.nixosSystem {
     inputs.nix-flatpak.nixosModules.nix-flatpak
     inputs.mangowm.nixosModules.mango
     inputs.agenix.nixosModules.default
+    inputs.dms.nixosModules.dank-material-shell
   ]
   ++ nixpkgs.lib.optionals isDesktop [
     home-manager.nixosModules.home-manager

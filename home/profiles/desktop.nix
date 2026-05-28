@@ -19,6 +19,9 @@ in
     ../programs/lazygit
     ../programs/vesktop
     ../programs/rclone
+    ../programs/alacritty
+    ../programs/kitty
+    ../programs/zen-browser
   ];
 
   home.packages = with pkgs; [
@@ -28,8 +31,10 @@ in
     qimgv
     gpu-screen-recorder
     prismlauncher
+    labymod-launcher
+    mpvpaper
+    swappy
     swww
-    inputs.quickshell.packages."${pkgs.stdenv.hostPlatform.system}".default
     kdePackages.qt5compat
     (writeShellApplication {
       name = "minecraft";
@@ -44,7 +49,6 @@ in
     })
     localsend
     deskflow
-    sonobus
     wf-recorder
     gifski
     grim
@@ -53,11 +57,10 @@ in
     translate-shell
     tesseract
     unstable.gowall
-    krita
+    unstable.krita
     system-config-printer
     libreoffice
     pokemon-colorscripts
-    prismlauncher
     android-tools
     obs-studio
     waydroid
@@ -118,7 +121,7 @@ in
       "file://${homeDir}/Videos"
       "file://${homeDir}/Music"
       "file://${homeDir}/Workspace"
-      "file://${homeDir}/nixdots"
+      "file://${homeDir}/dotfiles"
     ];
   };
 

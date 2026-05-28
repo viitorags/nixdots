@@ -44,9 +44,9 @@
 ## Quick Start
 
 ```bash
-git clone https://github.com/viitorags/nixdots.git
+git clone https://github.com/viitorags/dotfiles.git
 
-cd nixdots
+cd dotfiles
 
 sudo nixos-rebuild switch --flake .#gh0stk
 home-manager switch --flake .

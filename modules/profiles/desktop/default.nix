@@ -5,7 +5,8 @@
 }:
 {
   imports = [
-    ../../core/sddm.nix
+    # ../../core/sddm.nix
+    ../../core/dms-greeter.nix
     ../../core/niri.nix
     ../../core/portals.nix
     ../../core/bluetooth.nix
@@ -22,13 +23,13 @@
   environment.systemPackages = with pkgs; [
     telegram-desktop
     kdePackages.ark
-    (brave.override {
+    (unstable.brave.override {
       commandLineArgs = [
         "--password-store=gnome"
-        "--ozone-platform=wayland"
-        "--enable-features=UseOzonePlatform"
-        "--enable-features=VaapiVideoDecoder"
-        "--enable-features=BatterySaverModeAvailable"
+        "--ozone-platform-hint=auto"
+        "--enable-features=UseOzonePlatform,VaapiVideoDecoder,VaapiVideoEncoder,CanvasOopRasterization,BatterySaverModeAvailable,HighEfficiencyModeAvailable"
+        "--disable-gpu-memory-buffer-video-frames"
+        "--js-flags=--max-old-space-size=512"
       ];
     })
     gparted

@@ -49,7 +49,7 @@ in
       };
       to = {
         type = "path";
-        path = "${config.home.homeDirectory}/nixdots";
+        path = "${config.home.homeDirectory}/dotfiles";
       };
     };
   };

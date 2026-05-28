@@ -16,7 +16,7 @@ in
   ];
 
   programs.noctalia-shell = with config.lib.stylix.colors.withHashtag; {
-    enable = true;
+    enable = false;
 
     colors = {
       mError = "${base08}";

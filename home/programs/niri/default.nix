@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 {
   xdg.configFile."niri/config.kdl".text = with config.lib.stylix.colors; ''
+    include "dms/wpblur.kdl"
+
     output "HDMI-A-1" {
       mode "1440x900@74.997"
       scale 1
@@ -33,7 +35,7 @@
     prefer-no-csd
 
     layout {
-      gaps 12
+      gaps 10
 
       center-focused-column "never"
 
@@ -75,6 +77,12 @@
       }
     }
 
+    blur {
+      passes 3
+      offset 1
+      saturation 1
+    }
+
     hotkey-overlay {
       skip-at-startup
     }
@@ -109,14 +117,14 @@
     }
 
     binds {
-      Mod+Return { spawn "wezterm" "start"; }
-      Mod+A { spawn "noctalia-shell" "ipc" "call" "launcher" "toggle"; }
-      Mod+V { spawn "noctalia-shell" "ipc" "call" "launcher" "clipboard"; }
-      Mod+W { spawn "noctalia-shell" "ipc" "call" "plugin:wallcards" "toggle"; }
-      Mod+P { spawn "noctalia-shell" "ipc" "call" "sessionMenu" "toggle"; }
+      Mod+Return { spawn "kitty"; }
+      Mod+A { spawn "dms" "ipc" "call" "launcher" "toggle"; }
+      Mod+V { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
+      Mod+W { spawn "dms" "ipc" "call" "wallpaperCarousel" "toggle"; }
+      Mod+P { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
       Scroll_Lock { spawn "scrolllock_keyboard"; }
-      Mod+E { spawn "wezterm" "start" "--" "yazi"; }
-      Mod+C { spawn "wezterm" "start" "--" "nvim"; }
+      Mod+E { spawn "kitty" "-e" "yazi"; }
+      Mod+C { spawn "kitty" "-e" "zsh" "-ic" "nvim"; }
       Mod+B { spawn "brave"; }
       Alt+Insert { screenshot-window write-to-disk=true; }
       Ctrl+Alt+Delete { quit; }
@@ -229,7 +237,7 @@
     }
 
     layer-rule {
-      match namespace="^noctalia-overview*"
+      match namespace="dms:blurwallpaper"
       place-within-backdrop true
     }
 
@@ -238,8 +246,12 @@
     }
 
     window-rule {
-      opacity 0.9
+      opacity 0.8
       draw-border-with-background false
+
+      background-effect {
+        blur true
+      }
 
       focus-ring {
         width 2
@@ -247,7 +259,7 @@
         inactive-color "#505050"
       }
 
-      geometry-corner-radius 20
+      geometry-corner-radius 12
       clip-to-geometry true
     }
 
@@ -297,21 +309,6 @@
       match title="Discord Popout"
       open-floating true
       default-floating-position relative-to="bottom-right" x=32 y=32
-    }
-
-    window-rule {
-      match app-id="pavucontrol"
-      open-floating true
-    }
-
-    window-rule {
-      match app-id="pavucontrol-qt"
-      open-floating true
-    }
-
-    window-rule {
-      match app-id="com.saivert.pwvucontrol"
-      open-floating true
     }
 
     window-rule {
@@ -427,6 +424,11 @@
     window-rule {
       match title="Error"
       open-floating true
+    }
+
+    window-rule {
+      match app-id="sioyek"
+      opacity 1.0
     }
   '';
 }

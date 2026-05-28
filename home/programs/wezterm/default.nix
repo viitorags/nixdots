@@ -16,7 +16,8 @@ in
        config.window_close_confirmation = "NeverPrompt"
        config.cursor_blink_ease_in = "Constant"
        config.cursor_blink_ease_out = "Constant"
-       config.line_height = 1.5
+       --config.line_height = 1.5
+       config.front_end = "OpenGL"
        config.font = wezterm.font_with_fallback({
        	{
        		family = "${font.name}",

@@ -11,6 +11,7 @@
     with pkgs;
     [
       mynvim.packages.${stdenv.hostPlatform.system}.nvim
+      claude-code
       fd
       jq
       ripgrep
@@ -24,15 +25,15 @@
       shfmt
       lazygit
       dbeaver-bin
+      flutter
     ]
     ++ pkgs.lib.optionals isDesktop [
       godot-mono
       vscode-fhs
       unstable.gemini-cli
-      unstable.github-copilot-cli
+      # unstable.github-copilot-cli
       unstable.antigravity
-      (callPackage ../pkgs/opencode/package.nix { })
-      # unstable.opencode
+      # (callPackage ../pkgs/opencode/package.nix { })
       insomnia
       delta
       lazydocker
@@ -45,6 +46,7 @@
       (callPackage ../pkgs/laravel-pint/package.nix { })
       clang-tools
       gcc
+      openjdk25
     ];
 
   devShells = {
