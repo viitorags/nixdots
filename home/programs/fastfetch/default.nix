@@ -5,7 +5,7 @@
     settings = {
       logo = {
         "source" = "/home/vitor/.config/fastfetch/images/image.png";
-        type = "iterm";
+        type = "kitty";
         height = 4;
         # width = 26;
         padding = {

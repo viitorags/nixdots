@@ -4,6 +4,7 @@
 {
   imports = [
     ../../modules/configuration.nix
+    ./shell.nix
    # ../../secrets
   ];
 }

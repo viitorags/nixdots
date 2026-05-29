@@ -74,11 +74,13 @@ nixpkgs.lib.nixosSystem {
     inputs.agenix.nixosModules.default
     inputs.dms.nixosModules.dank-material-shell
   ]
-  ++ nixpkgs.lib.optionals isDesktop [
+  ++ [
     home-manager.nixosModules.home-manager
     (sharedHomeManager {
       inherit role hostName isDesktop;
     })
+  ]
+  ++ nixpkgs.lib.optionals isDesktop [
   ]
   ++ nixpkgs.lib.optional (builtins.pathExists ../modules/profiles/${role}.nix) ../modules/profiles/${role}.nix
   ++ nixpkgs.lib.optional (builtins.pathExists ../modules/profiles/${role}/default.nix) ../modules/profiles/${role};

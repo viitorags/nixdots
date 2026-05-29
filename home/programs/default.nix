@@ -5,7 +5,7 @@
     ./direnv
     ./yazi
     ./btop
-    ./shell
+    # ./shell
     # ./starship
   ];
 }
