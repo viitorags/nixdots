@@ -1,4 +1,4 @@
-{ ... }:
+{ lib, ... }:
 {
   imports = [
     ../common
@@ -8,6 +8,15 @@
   ];
 
   networking.hostName = "slime";
+
+  # Only allow access via Tailscale, SSH (via Tailscale) and Cloudflared
+  networking.firewall = {
+    enable = true;
+    allowedTCPPorts = lib.mkForce [ ];
+    allowedUDPPorts = lib.mkForce [ ];
+    allowedTCPPortRanges = lib.mkForce [ ];
+    allowedUDPPortRanges = lib.mkForce [ ];
+  };
 
   boot.loader.systemd-boot.enable = true;
   boot.loader.efi.canTouchEfiVariables = true;
