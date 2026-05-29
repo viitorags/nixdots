@@ -5,7 +5,6 @@
 }:
 {
   imports = [
-    # Server specific programs can be added here
   ];
 
   # Minimal server-specific home-manager config

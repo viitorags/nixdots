@@ -15,34 +15,34 @@
     ../../modules/profiles/gpu/intel.nix
   ];
 
-  boot.initrd.availableKernelModules = [
-    "ehci_pci"
-    "ahci"
-    "firewire_ohci"
-    "xhci_pci"
-    "usb_storage"
-    "sd_mod"
-    "sr_mod"
-    "sdhci_pci"
-  ];
-  boot.initrd.kernelModules = [ "i915" ];
-  boot.kernelModules = [
-    "uinput"
-    "kvm-intel"
-    "ec_sys"
-  ];
-  boot.kernelParams = [
-    "i915.enable_rc6=1"
-    "i915.enable_fbc=1"
-    "i915.enable_guc=2"
-    "intel_iommu=on"
-    "intel_pstate=disable"
-    "nopat"
-  ];
-  boot.extraModulePackages = [ ];
-  boot.extraModprobeConfig = ''
-    options ec_sys write_support=1
-  '';
+  # boot.initrd.availableKernelModules = [
+  #   "ehci_pci"
+  #   "ahci"
+  #   "firewire_ohci"
+  #   "xhci_pci"
+  #   "usb_storage"
+  #   "sd_mod"
+  #   "sr_mod"
+  #   "sdhci_pci"
+  # ];
+  # boot.initrd.kernelModules = [ "i915" ];
+  # boot.kernelModules = [
+  #   "uinput"
+  #   "kvm-intel"
+  #   "ec_sys"
+  # ];
+  # boot.kernelParams = [
+  #   "i915.enable_rc6=1"
+  #   "i915.enable_fbc=1"
+  #   "i915.enable_guc=2"
+  #   "intel_iommu=on"
+  #   "intel_pstate=disable"
+  #   "nopat"
+  # ];
+  # boot.extraModulePackages = [ ];
+  # boot.extraModprobeConfig = ''
+  #   options ec_sys write_support=1
+  # '';
 
   fileSystems."/boot" = {
     device = "/dev/disk/by-label/boot";
