@@ -11,11 +11,9 @@
     with pkgs;
     [
       mynvim.packages.${stdenv.hostPlatform.system}.nvim
-      claude-code
       fd
       jq
       ripgrep
-      nodejs
       shellcheck
       nixd
       nil
@@ -24,10 +22,12 @@
       gnumake
       shfmt
       lazygit
-      dbeaver-bin
-      flutter
     ]
     ++ pkgs.lib.optionals isDesktop [
+      claude-code
+      nodejs
+      dbeaver-bin
+      flutter
       godot-mono
       vscode-fhs
       unstable.gemini-cli

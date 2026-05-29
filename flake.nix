@@ -146,7 +146,7 @@
             ]
             ++ lib.optional (builtins.pathExists ./home/profiles/${role}.nix) ./home/profiles/${role}.nix
             ++ lib.optional (builtins.pathExists ./home/profiles/${role}-packages.nix) ./home/profiles/${role}-packages.nix
-            ++ [
+            ++ lib.optionals isDesktop [
               inputs.niri-flake.homeModules.niri
               inputs.stylix.homeModules.stylix
               noctalia.homeModules.default
