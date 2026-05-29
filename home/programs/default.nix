@@ -1,7 +1,7 @@
 { ... }:
 {
   imports = [
-    ./stylix
+    # ./stylix
     ./direnv
     ./yazi
     ./btop

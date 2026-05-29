@@ -35,6 +35,8 @@ nixpkgs.lib.nixosSystem {
     ../hosts/${name}
     nur.modules.nixos.default
     inputs.stylix.nixosModules.stylix
+  ]
+  ++ nixpkgs.lib.optionals isDesktop [
     {
       stylix = {
         polarity = "dark";
@@ -69,6 +71,8 @@ nixpkgs.lib.nixosSystem {
         };
       };
     }
+  ]
+  ++ [
     inputs.nix-flatpak.nixosModules.nix-flatpak
     inputs.mangowm.nixosModules.mango
     inputs.agenix.nixosModules.default

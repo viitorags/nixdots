@@ -10,6 +10,7 @@ let
 in
 {
   imports = [
+    ../programs/stylix
     ../programs/niri
     ../programs/noctalia
     ../programs/wezterm
