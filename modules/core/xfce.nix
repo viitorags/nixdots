@@ -1,8 +1,14 @@
-{ pkgs, ... }:
+{ pkgs, vars, ... }:
 {
   services.xserver = {
     enable = true;
-    displayManager.lightdm.enable = true;
+    displayManager.lightdm = {
+      enable = true;
+      autoLogin = {
+        enable = true;
+        user = vars.username;
+      };
+    };
     desktopManager.xfce.enable = true;
   };
 
