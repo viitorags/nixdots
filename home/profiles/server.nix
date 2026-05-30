@@ -5,6 +5,7 @@
 }:
 {
   imports = [
+    ../programs/kitty
   ];
 
   # Minimal server-specific home-manager config

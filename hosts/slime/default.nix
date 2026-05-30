@@ -5,6 +5,7 @@
     ./hardware-configuration.nix
     ../../hardening
     ../../infra
+    ../../modules/profiles/server
   ];
 
   networking.hostName = "slime";

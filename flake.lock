@@ -350,11 +350,11 @@
         "nixpkgs": "nixpkgs_2"
       },
       "locked": {
-        "lastModified": 1779840632,
-        "narHash": "sha256-nNi3EmXayL6g3GZCfbKF6c+DJRGALik0FLwtrYU9SpY=",
+        "lastModified": 1780099302,
+        "narHash": "sha256-NRcNBM3Q+VzTPW1hgeBN+9OwgDdolqNJNmkySyj567U=",
         "owner": "vytorags",
         "repo": "nvim_dots",
-        "rev": "3af8d337e4c0306f9af0c7eb43f9e4f0a3a56cb8",
+        "rev": "332d4c9952905330940d6526f41b587c9bf3661c",
         "type": "github"
       },
       "original": {
