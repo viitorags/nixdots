@@ -18,6 +18,7 @@
         "plugdev"
         "video"
         "input"
+        "greeter"
       ];
       ignoreShellProgramCheck = true;
     };

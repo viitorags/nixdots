@@ -7,15 +7,15 @@ in
     enable = true;
 
     font = lib.mkForce {
-      name = font.name;
-      size = 13;
+      name = "${font.name} SemiBold";
+      size = 14;
     };
 
     settings = {
       font_features = "${font.name} +calt +liga +dlig +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08";
       cursor_blink_interval = "0.5";
       cursor_stop_blinking_after = "0";
-      adjust_line_height = "150%";
+      # adjust_line_height = "150%";
       window_padding_width = "2 3 0 3";
       cursor_shape = "block";
       tab_bar_style = "powerline";

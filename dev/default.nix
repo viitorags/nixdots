@@ -32,7 +32,7 @@
       insomnia
       delta
       lazydocker
-      nodePackages.prettier
+      prettier
       pnpm
       (callPackage ../pkgs/php-cs-fixer/package.nix { })
       (callPackage ../pkgs/laravel-pint/package.nix { })

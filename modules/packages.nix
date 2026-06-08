@@ -54,6 +54,12 @@ in
       nerd-fonts.jetbrains-mono
       material-symbols
       (callPackage ../pkgs/sarasa-gothic-nf/package.nix { })
+      noto-fonts
+      noto-fonts-cjk-sans
+      noto-fonts-color-emoji
+      dejavu_fonts
     ]
   );
+
+  fonts.fontconfig.useEmbeddedBitmaps = false;
 }

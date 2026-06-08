@@ -5,8 +5,8 @@
 }:
 {
   imports = [
-    # ../../core/sddm.nix
-    ../../core/dms-greeter.nix
+    ../../core/sddm.nix
+    # ../../core/dms-greeter.nix
     ../../core/niri.nix
     ../../core/portals.nix
     ../../core/bluetooth.nix

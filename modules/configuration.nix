@@ -91,5 +91,5 @@
     ACTION=="add", SUBSYSTEM=="leds", KERNEL=="*::scrolllock", RUN+="/bin/sh -c 'chmod 666 /sys/class/leds/%k/brightness /sys/class/leds/%k/trigger'"
   '';
 
-  system.stateVersion = "25.11";
+  system.stateVersion = "26.05";
 }

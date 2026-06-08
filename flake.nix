@@ -1,5 +1,5 @@
 {
-  description = "Viitorags NixOs Configuration";
+  description = "Vytorags NixOs Configuration";
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.11";
@@ -35,7 +35,7 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia-shell";
+      url = "github:noctalia-dev/noctalia-shell?ref=v5";
       inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 

@@ -1,4 +1,12 @@
-{ config, inputs, ... }:
+{
+  config,
+  lib,
+  inputs,
+  ...
+}:
+let
+  font = config.stylix.fonts.monospace;
+in
 {
   programs.alacritty = {
     enable = true;
@@ -15,30 +23,30 @@
         startup_mode = "Windowed";
 
         padding = {
-          x = 1;
+          x = 2;
           y = 0;
         };
       };
 
-      font = {
-        size = 15;
+      font = lib.mkForce {
+        size = 14;
         normal = {
-          family = "VictorMono Nerd Font";
+          family = "${font.name}";
           style = "Bold";
         };
 
         bold = {
-          family = "VictorMono Nerd Font";
+          family = "${font.name}";
           style = "Bold";
         };
 
         italic = {
-          family = "VictorMono Nerd Font";
+          family = "${font.name}";
           style = "Italic";
         };
 
         bold_italic = {
-          family = "VictorMono Nerd Font";
+          family = "${font.name}";
           style = "Bold Italic";
         };
       };

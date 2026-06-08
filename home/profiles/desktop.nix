@@ -33,6 +33,8 @@ in
     gpu-screen-recorder
     prismlauncher
     labymod-launcher
+    unstable.xournalpp
+    sonobus
     mpvpaper
     swappy
     swww

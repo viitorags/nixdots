@@ -12,7 +12,8 @@ in
     enable = true;
     polarity = "dark";
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/tokyo-night-dark.yaml";
+    # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
 
     # base16Scheme = {
     #   base00 = "#1a1a2e";
@@ -62,6 +63,7 @@ in
       starship.enable = false;
       alacritty.enable = false;
       dank-material-shell.enable = false;
+      sioyek.enable = false;
     };
 
     fonts = {
@@ -69,7 +71,7 @@ in
       sansSerif = font;
       emoji = font;
       monospace = {
-        name = "JetBrainsMono Nerd Font";
+        name = "JetBrainsMono NF";
       };
     };
 

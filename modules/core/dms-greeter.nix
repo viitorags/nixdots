@@ -27,4 +27,8 @@
       path = "/tmp/dms-greeter.log";
     };
   };
+
+  environment.systemPackages = [
+    unstable.dms-shell
+  ];
 }

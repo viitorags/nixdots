@@ -100,7 +100,7 @@
     spawn-at-startup "eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)"
     spawn-at-startup "${pkgs.polkit_gnome}/bin/polkit-gnome-authentication-agent-1"
     spawn-at-startup "xwayland-satellite"
-    spawn-sh-at-startup "noctalia-shell"
+    spawn-sh-at-startup "noctalia"
     spawn-at-startup "wl-paste --type text --watch cliphist store"
     spawn-at-startup "wl-paste --type image --watch cliphist store"
 
@@ -118,10 +118,10 @@
 
     binds {
       Mod+Return { spawn "kitty"; }
-      Mod+A { spawn "dms" "ipc" "call" "launcher" "toggle"; }
-      Mod+V { spawn "dms" "ipc" "call" "clipboard" "toggle"; }
-      Mod+W { spawn "dms" "ipc" "call" "wallpaperCarousel" "toggle"; }
-      Mod+P { spawn "dms" "ipc" "call" "powermenu" "toggle"; }
+      Mod+A { spawn "noctalia" "msg" "panel-open" "launcher"; }
+      Mod+V { spawn "noctalia" "msg" "panel-open" "clipboard"; }
+      Mod+W { spawn "noctalia" "msg" "panel-open" "wallpaper"; }
+      Mod+P { spawn "noctalia" "msg" "panel-open" "session"; }
       Scroll_Lock { spawn "scrolllock_keyboard"; }
       Mod+E { spawn "kitty" "-e" "yazi"; }
       Mod+C { spawn "kitty" "-e" "zsh" "-ic" "nvim"; }
@@ -237,7 +237,7 @@
     }
 
     layer-rule {
-      match namespace="dms:blurwallpaper"
+      match namespace="^noctalia-backdrop*"
       place-within-backdrop true
     }
 
@@ -428,6 +428,8 @@
 
     window-rule {
       match app-id="sioyek"
+      match app-id="speedynote"
+      match app-id="com.github.xournalpp.xournalpp"
       opacity 1.0
     }
   '';
