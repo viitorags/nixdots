@@ -38,7 +38,7 @@ in
              font = wezterm.font("${font.name}", { weight = "Bold", stretch = "Normal", style = "Italic" }),
          },
        }
-      config.font_size = 12.5
+      config.font_size = 13.9
        config.custom_block_glyphs = true
        config.mouse_wheel_scrolls_tabs = false
        config.warn_about_missing_glyphs = false

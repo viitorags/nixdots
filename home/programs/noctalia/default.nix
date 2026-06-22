@@ -24,11 +24,12 @@ in
       bar.default = {
         position = "right";
         thickness = 42;
-        margin_ends = 10;
-        radius = 12;
+        margin_ends = 0;
+        margin_edge = 0;
+        radius = 0;
         scale = 1.20;
         border = "secondary";
-        border_width = 2.0;
+        border_width = 0;
         background_opacity = 0.80;
         capsule = true;
         capsule_opacity = 0.80;
@@ -67,11 +68,11 @@ in
       };
 
       shell.panel = {
-        launcher_placement = "floating";
-        clipboard_placement = "floating";
-        control_center_placement = "floating";
-        wallpaper_placement = "floating";
-        session_placement = "floating";
+        launcher_placement = "attached";
+        clipboard_placement = "attached";
+        control_center_placement = "attached";
+        wallpaper_placement = "attached";
+        session_placement = "attached";
         transparency_mode = "soft";
       };
 
@@ -104,7 +105,7 @@ in
       };
 
       widget.workspaces = {
-        minimal = false;
+        minimal = true;
         hide_when_empty = true;
       };
     };

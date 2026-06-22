@@ -1,11 +1,25 @@
 { ... }:
 {
   imports = [
-    # ./stylix
     ./direnv
     ./yazi
     ./btop
-    # ./shell
+    ./shell
     # ./starship
+    ./stylix
+    ./niri
+    ./hyprland
+    ./noctalia
+    ./wezterm
+    ./sioyek
+    ./fastfetch
+    ./cava
+    ./lazygit
+    ./vesktop
+    ./rclone
+    ./alacritty
+    ./foot
+    ./kitty
+    ./zen-browser
   ];
 }

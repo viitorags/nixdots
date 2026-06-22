@@ -5,4 +5,3 @@
   defaultLocale = "en_US.UTF-8";
   extraLocale = "pt_BR.UTF-8";
 }
-

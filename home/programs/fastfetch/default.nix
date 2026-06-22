@@ -4,11 +4,11 @@
 
     settings = {
       logo = {
-        "source" = "/home/vitor/.config/fastfetch/images/image.png";
+        source = "$(find \"$HOME/dotfiles/home/programs/fastfetch/pngs/\" -name \"*.png\" | sort -R | head -1)";
         type = "kitty";
-        height = 4;
-        # width = 26;
+        height = 12;
         padding = {
+          top = 2;
           right = 4;
         };
       };
@@ -16,6 +16,9 @@
         "separator" = " ";
       };
       "modules" = [
+        "break"
+        "break"
+        "break"
         {
           "type" = "title";
           "keyWidth" = 10;

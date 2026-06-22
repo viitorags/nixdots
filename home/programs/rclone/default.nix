@@ -2,31 +2,39 @@
 {
   programs.rclone.enable = true;
 
-  systemd.user.services.rclone-obsidian-mount = {
+  # O Serviço que executa a sincronização de fato
+  systemd.user.services.rclone-obsidian-bisync = {
     Unit = {
-      Description = "Mount specific Brain folder from Google Drive";
+      Description = "Bidirectional sync for Brain folder with Google Drive";
       After = [ "network-online.target" ];
     };
 
     Service = {
-      Type = "simple";
+      Type = "oneshot";
+      # Removemos os buffers de stream e focamos em sincronização estática
       ExecStart = ''
-        ${pkgs.rclone}/bin/rclone mount Brain:Brain %h/Workspace/Brain \
-          --vfs-cache-mode full \
-          --vfs-cache-max-size 6G \
-          --vfs-cache-max-age 25h \
-          --vfs-read-chunk-size 33M \
-          --buffer-size 17M \
-          --no-modtime
+        ${pkgs.rclone}/bin/rclone bisync Brain:Brain %h/Workspace/Brain \
+          --create-empty-src-dirs \
+          --compare size,modtime \
+          --slow-hash-sync-only \
+          --verbose
       '';
-      ExecStop = "${pkgs.fuse}/bin/fusermount -u %h/Workspace/Brain";
-      Restart = "on-failure";
-      RestartSec = "11s";
       ExecStartPre = "${pkgs.coreutils}/bin/mkdir -p %h/Workspace/Brain";
     };
+  };
 
+  # O Timer que dispara o serviço silenciosamente no background
+  systemd.user.timers.rclone-obsidian-bisync = {
+    Unit = {
+      Description = "Timer to sync Brain folder every 5 minutes";
+    };
+    Timer = {
+      OnBootSec = "3m"; # Aguarda 3 minutos após o boot para iniciar
+      OnUnitActiveSec = "5m"; # Roda a cada 5 minutos
+      Persistent = true; # Se o PC estava desligado na hora do timer, roda assim que ligar
+    };
     Install = {
-      WantedBy = [ "default.target" ];
+      WantedBy = [ "timers.target" ];
     };
   };
 }

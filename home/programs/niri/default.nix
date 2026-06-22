@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 {
   xdg.configFile."niri/config.kdl".text = with config.lib.stylix.colors; ''
-    include "dms/wpblur.kdl"
+    //include "dms/wpblur.kdl"
 
     output "HDMI-A-1" {
       mode "1440x900@74.997"
@@ -32,10 +32,14 @@
       }
     }
 
+    cursor {
+      hide-when-typing
+    }
+
     prefer-no-csd
 
     layout {
-      gaps 10
+      gaps 6
 
       center-focused-column "never"
 
@@ -52,7 +56,7 @@
       }
 
       border {
-        width 2
+        width 1
         active-color "#${base0D}"
         inactive-color "#505050"
 
@@ -78,9 +82,9 @@
     }
 
     blur {
-      passes 3
-      offset 1
-      saturation 1
+      passes 5
+      offset 0
+      //saturation 1
     }
 
     hotkey-overlay {
@@ -100,7 +104,7 @@
     spawn-at-startup "eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)"
     spawn-at-startup "${pkgs.polkit_gnome}/bin/polkit-gnome-authentication-agent-1"
     spawn-at-startup "xwayland-satellite"
-    spawn-sh-at-startup "noctalia"
+    spawn-sh-at-startup "noctalia --daemon"
     spawn-at-startup "wl-paste --type text --watch cliphist store"
     spawn-at-startup "wl-paste --type image --watch cliphist store"
 
@@ -117,19 +121,24 @@
     }
 
     binds {
-      Mod+Return { spawn "kitty"; }
-      Mod+A { spawn "noctalia" "msg" "panel-open" "launcher"; }
-      Mod+V { spawn "noctalia" "msg" "panel-open" "clipboard"; }
-      Mod+W { spawn "noctalia" "msg" "panel-open" "wallpaper"; }
-      Mod+P { spawn "noctalia" "msg" "panel-open" "session"; }
+      Mod+Return { spawn "wezterm"; }
+      Mod+A { spawn-sh "noctalia msg panel-toggle launcher"; }
+      Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; }
+      Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
+      Mod+P { spawn-sh "noctalia msg panel-toggle session"; }
+     //Mod+A { spawn-sh "dms ipc call launcher toggle"; }
+     //Mod+V { spawn-sh "dms ipc call clipboard toggle"; }
+     //Mod+W { spawn-sh "dms ipc call dankdash wallpaper"; }
+     //Mod+P { spawn-sh "dms ipc call powermenu toggle"; }
       Scroll_Lock { spawn "scrolllock_keyboard"; }
-      Mod+E { spawn "kitty" "-e" "yazi"; }
-      Mod+C { spawn "kitty" "-e" "zsh" "-ic" "nvim"; }
-      Mod+B { spawn "brave"; }
+      Mod+E { spawn "wezterm" "start" "--" "yazi"; }
+      Mod+C { spawn "wezterm" "start" "--" "nvim"; }
+      Mod+B { spawn "zen-beta"; }
       Alt+Insert { screenshot-window write-to-disk=true; }
       Ctrl+Alt+Delete { quit; }
       Ctrl+Insert { screenshot-screen write-to-disk=true; }
       Insert { screenshot; }
+      //Insert { spawn-sh "dms ipc call screenCaptureToolbar toggle"; }
       Mod+1 { focus-workspace 1; }
       Mod+2 { focus-workspace 2; }
       Mod+3 { focus-workspace 3; }
@@ -237,12 +246,13 @@
     }
 
     layer-rule {
-      match namespace="^noctalia-backdrop*"
+      match namespace="^dms-backdrop*"
+      match namespace="^noctalia-backdrop"
       place-within-backdrop true
     }
 
     layer-rule {
-      match namespace="^noctalia-background*"
+      match namespace="^dms-background*"
     }
 
     window-rule {
@@ -259,7 +269,7 @@
         inactive-color "#505050"
       }
 
-      geometry-corner-radius 12
+      geometry-corner-radius 5
       clip-to-geometry true
     }
 

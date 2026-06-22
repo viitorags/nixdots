@@ -55,7 +55,7 @@
     };
 
     settings = {
-      enable_mouse_support = true;
+      # enable_mouse_support = true;
 
       log = {
         enabled = false;
@@ -142,135 +142,135 @@
       open = {
         prepend_rules = [
           {
-            name = "*.pdf";
+            url = "*.pdf";
             use = "pdf";
           }
           {
-            name = "*.jpg";
+            url = "*.jpg";
             use = "img";
           }
           {
-            name = "*.png";
+            url = "*.png";
             use = "img";
           }
           {
-            name = "*.gif";
+            url = "*.gif";
             use = "img";
           }
           {
-            name = "*.bmp";
+            url = "*.bmp";
             use = "img";
           }
           {
-            name = "*.svg";
+            url = "*.svg";
             use = "img";
           }
           {
-            name = "*.ico";
+            url = "*.ico";
             use = "img";
           }
           {
-            name = "*.heic";
+            url = "*.heic";
             use = "img";
           }
           {
-            name = "*.jpeg";
+            url = "*.jpeg";
             use = "img";
           }
           {
-            name = "*.tiff";
+            url = "*.tiff";
             use = "img";
           }
           {
-            name = "*.webp";
+            url = "*.webp";
             use = "img";
           }
           {
-            name = "*.mp4";
+            url = "*.mp4";
             use = "mpv";
           }
           {
-            name = "*.zip";
+            url = "*.zip";
             use = "ark";
           }
           {
-            name = "*.tar";
+            url = "*.tar";
             use = "ark";
           }
           {
-            name = "*.gz";
+            url = "*.gz";
             use = "ark";
           }
           {
-            name = "*.bz2";
+            url = "*.bz2";
             use = "ark";
           }
           {
-            name = "*.xz";
+            url = "*.xz";
             use = "ark";
           }
           {
-            name = "*.7z";
+            url = "*.7z";
             use = "ark";
           }
           {
-            name = "*.rar";
+            url = "*.rar";
             use = "ark";
           }
           {
-            name = "*.tar.gz";
+            url = "*.tar.gz";
             use = "ark";
           }
           {
-            name = "*.tgz";
+            url = "*.tgz";
             use = "ark";
           }
           {
-            name = "*.tar.bz2";
+            url = "*.tar.bz2";
             use = "ark";
           }
           {
-            name = "*.tbz2";
+            url = "*.tbz2";
             use = "ark";
           }
           {
-            name = "*.tar.xz";
+            url = "*.tar.xz";
             use = "ark";
           }
           {
-            name = "*.txz";
+            url = "*.txz";
             use = "ark";
           }
           {
-            name = "*.lz";
+            url = "*.lz";
             use = "ark";
           }
           {
-            name = "*.lzma";
+            url = "*.lzma";
             use = "ark";
           }
           {
-            name = "*.zst";
+            url = "*.zst";
             use = "ark";
           }
           {
-            name = "*.zstd";
+            url = "*.zstd";
             use = "ark";
           }
           {
-            name = "*.cab";
+            url = "*.cab";
             use = "ark";
           }
           {
-            name = "*.iso";
+            url = "*.iso";
             use = "ark";
           }
           {
-            name = "*.apk";
+            url = "*.apk";
             use = "ark";
           }
           {
-            name = "*.jar";
+            url = "*.jar";
             use = "ark";
           }
         ];
@@ -280,18 +280,19 @@
         prepend_fetchers = [
           {
             id = "git";
-            name = "*";
+            url = "*";
             run = "git";
+            group = "";
           }
           {
             id = "git";
-            name = "/";
+            url = "/";
             run = "git";
+            group = "";
           }
         ];
 
         prepend_previewers = [
-          # Archive previewer
           {
             mime = "application/*zip";
             run = "ouch";
@@ -322,7 +323,7 @@
           }
           # Glow preview
           {
-            name = "*.md";
+            url = "*.md";
             run = "glow";
           }
         ];
@@ -337,6 +338,7 @@
       ouch = yaziPlugins.ouch;
       rich-preview = yaziPlugins.rich-preview;
       yatline = yaziPlugins.yatline;
+      # glow = yaziPlugins.glow;
       kdeconnect-send = ./plugins/kdeconnect-send.yazi;
     };
   };

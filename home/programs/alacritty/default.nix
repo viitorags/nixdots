@@ -29,7 +29,7 @@ in
       };
 
       font = lib.mkForce {
-        size = 14;
+        size = 13.9;
         normal = {
           family = "${font.name}";
           style = "Bold";

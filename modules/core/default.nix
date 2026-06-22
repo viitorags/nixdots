@@ -10,5 +10,18 @@
     ./ccache.nix
     ./ananicy.nix
     ./scx.nix
+    ./sddm.nix
+    ./niri.nix
+    ./portals.nix
+    ./bluetooth.nix
+    ./pipewire.nix
+    ./virt-manager.nix
+    ./opentablet.nix
+    ./gamemode.nix
+    ./flatpak.nix
+    ./docker.nix
+    ./steam.nix
+    ./hyprland.nix
+    ./waydroid.nix
   ];
 }

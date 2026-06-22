@@ -2,22 +2,47 @@
   config,
   pkgs,
   lib,
-  role ? "desktop",
   vars,
   ...
 }:
 {
   imports = [
+    ./hardware-configuration.nix
     ./packages.nix
     ./core
   ];
 
+  networking.hostName = "kaizen";
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+
   boot.kernelPackages = pkgs.linuxPackages_zen;
-  # boot.kernelPackages = pkgs.linuxPackages_latest;
+
+  services.tailscale.enable = true;
+
+  services.tlp = {
+    enable = true;
+    settings = {
+      CPU_SCALING_GOVERNOR_ON_AC = "performance";
+      CPU_ENERGY_PERF_POLICY_ON_AC = "performance";
+
+      INTEL_GPU_MIN_FREQ_ON_AC = 850;
+      INTEL_GPU_MAX_FREQ_ON_AC = 1350;
+      INTEL_GPU_BOOST_FREQ_ON_AC = 1350;
+
+      SOUND_POWER_SAVE_ON_AC = 0;
+
+      WIFI_PWR_ON_AC = "off";
+
+      USB_AUTOSUSPEND = 0;
+    };
+  };
+
   nix.settings.experimental-features = [
     "nix-command"
     "flakes"
   ];
+
   nix.settings.auto-optimise-store = true;
 
   nix.settings = {
@@ -49,14 +74,20 @@
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };
-  # Configure network proxy if necessary
-  # networking.proxy.default = "http://user:password@proxy:port/";
-  # networking.proxy.noProxy = "127.0.0.1,localhost,internal.domain";
+
   networking.networkmanager.enable = true;
+
   networking.nameservers = [
     "1.1.1.2"
     "8.8.8.8"
   ];
+
+  networking.extraHosts = ''
+    140.82.113.6 api.github.com
+    140.82.113.3 github.com
+  '';
+
+  networking.nftables.enable = true;
 
   time.timeZone = vars.timeZone;
 
