@@ -1,23 +1,30 @@
-{ config, lib, ... }:
+{
+  unstable,
+  config,
+  lib,
+  ...
+}:
 let
   font = config.stylix.fonts.monospace;
 in
 {
   programs.kitty = {
     enable = true;
+    package = unstable.kitty;
 
     font = lib.mkForce {
       name = "${font.name} SemiBold";
-      size = 14;
+      size = 13.5;
     };
 
     settings = {
       font_features = "${font.name} +calt +liga +dlig +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08";
       cursor_blink_interval = "0.5";
       cursor_stop_blinking_after = "0";
-      # adjust_line_height = "150%";
+      adjust_line_height = "150%";
       window_padding_width = "2 3 0 3";
       cursor_shape = "block";
+      cursor_shape_insert = "block";
       tab_bar_style = "powerline";
       tab_bar_edge = "top";
       confirm_os_window_close = "0";

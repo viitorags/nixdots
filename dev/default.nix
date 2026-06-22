@@ -16,6 +16,7 @@
     claude-code
     nodejs
     dbeaver-bin
+    flyctl
     # flutter
     godot-mono
     vscode-fhs

@@ -121,7 +121,7 @@
     }
 
     binds {
-      Mod+Return { spawn "wezterm"; }
+      Mod+Return { spawn "kitty"; }
       Mod+A { spawn-sh "noctalia msg panel-toggle launcher"; }
       Mod+V { spawn-sh "noctalia msg panel-toggle clipboard"; }
       Mod+W { spawn-sh "noctalia msg panel-toggle wallpaper"; }
@@ -131,8 +131,8 @@
      //Mod+W { spawn-sh "dms ipc call dankdash wallpaper"; }
      //Mod+P { spawn-sh "dms ipc call powermenu toggle"; }
       Scroll_Lock { spawn "scrolllock_keyboard"; }
-      Mod+E { spawn "wezterm" "start" "--" "yazi"; }
-      Mod+C { spawn "wezterm" "start" "--" "nvim"; }
+      Mod+E { spawn-sh "kitty -e yazi"; }
+      Mod+C { spawn-sh "kitty -e zsh -ic nvim"; }
       Mod+B { spawn "zen-beta"; }
       Alt+Insert { screenshot-window write-to-disk=true; }
       Ctrl+Alt+Delete { quit; }
