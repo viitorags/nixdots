@@ -71,6 +71,10 @@
         from = 53317;
         to = 53317;
       }
+      {
+        from = 59100;
+        to = 59100;
+      }
     ];
     allowedUDPPortRanges = allowedTCPPortRanges;
   };

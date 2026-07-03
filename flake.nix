@@ -16,7 +16,7 @@
     stylix.url = "github:nix-community/stylix/release-26.05";
 
     niri-flake = {
-      url = "github:sodiboo/niri-flake";
+      url = "github:epireyn/niri-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -45,7 +45,7 @@
     };
 
     inir = {
-      url = "github:vytaro/iNir";
+      url = "github:snowarch/iNiR";
     };
 
     quickshell = {
@@ -64,6 +64,15 @@
         nixpkgs.follows = "nixpkgs-unstable";
         home-manager.follows = "home-manager";
       };
+    };
+
+    silentSDDM = {
+      url = "github:uiriansan/SilentSDDM";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    piri = {
+      url = "github:Asthestarsfalll/piri";
     };
   };
 
@@ -132,6 +141,8 @@
             inputs.mangowm.nixosModules.mango
             inputs.agenix.nixosModules.default
             inputs.dms.nixosModules.dank-material-shell
+            inputs.silentSDDM.nixosModules.default
+            inputs.piri.nixosModules.default
             home-manager.nixosModules.home-manager
             {
               stylix = {

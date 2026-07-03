@@ -26,8 +26,11 @@ in
       gpu-screen-recorder
       prismlauncher
       labymod-launcher
+      lunar-client
       unstable.xournalpp
-      sonobus
+      (callPackage ../pkgs/audiorelay/package.nix { })
+      (callPackage ../pkgs/niri-sidebar/package.nix { })
+      unstable.sonobus
       mpvpaper
       swappy
       awww
@@ -57,7 +60,6 @@ in
       system-config-printer
       libreoffice
       pokemon-colorscripts
-      android-tools
       obs-studio
       waydroid
       ppsspp
@@ -96,6 +98,8 @@ in
       })
       anki
       evtest
+      ytmdesktop
+      easyeffects
     ];
 
     sessionVariables = {

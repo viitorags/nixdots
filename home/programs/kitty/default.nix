@@ -11,24 +11,35 @@ in
   programs.kitty = {
     enable = true;
     package = unstable.kitty;
+    shellIntegration.enableZshIntegration = true;
 
     font = lib.mkForce {
       name = "${font.name} SemiBold";
-      size = 13.5;
+      size = 15;
     };
 
+    shellIntegration.mode = "no-cursor";
+
     settings = {
-      font_features = "${font.name} +calt +liga +dlig +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08";
+      text_composition_strategy = "legacy";
+      bold_font = "${font.name} Bold";
+      italic_font = "${font.name} Italic";
+      bold_italic_font = "${font.name} Bold Italic";
+      # font_features = "${font.name} +calt +liga +dlig +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08";
+      font_features = "none";
+      # modify_font = "cell_width 110%";
       cursor_blink_interval = "0.5";
       cursor_stop_blinking_after = "0";
-      adjust_line_height = "150%";
+      cursor_trail = 3;
+      cursor_trail_decay = "0.1 0.4";
+      cursor_trail_start_threshold = 2;
+      cursor_trail_color = "none";
+      adjust_line_height = "120%";
       window_padding_width = "2 3 0 3";
       cursor_shape = "block";
-      cursor_shape_insert = "block";
       tab_bar_style = "powerline";
       tab_bar_edge = "top";
       confirm_os_window_close = "0";
-      warn_about_missing_glyphs = "no";
       wayland_titlebar_color = "background";
     };
 

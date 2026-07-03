@@ -10,11 +10,9 @@ in
 {
   stylix = {
     enable = true;
-    # image = ../../../assets/wallpapers/ddg_1776503847400342859.jpg;
     polarity = "dark";
 
-    # base16Scheme = "${pkgs.base16-schemes}/share/themes/kanagawa.yaml";
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark.yaml";
+    base16Scheme = "${pkgs.base16-schemes}/share/themes/gruvbox-dark-medium.yaml";
 
     # base16Scheme = {
     #   base00 = "#1e222a";
@@ -36,41 +34,22 @@ in
     # };
 
     # base16Scheme = {
-    #   base00 = "#1a1a2e";
-    #   base01 = "#1e1e3f";
-    #   base02 = "#2d2b55";
-    #   base03 = "#4a3568";
-    #   base04 = "#b3b3b3";
-    #   base05 = "#ffffff";
-    #   base06 = "#d9d9d9";
-    #   base07 = "#f8f8ff";
-    #   base08 = "#fe4450";
-    #   base09 = "#ff9f1c";
-    #   base0A = "#ffd000";
-    #   base0B = "#72f1b8";
-    #   base0C = "#03edf9";
-    #   base0D = "#0097b2";
-    #   base0E = "#c792ea";
-    #   base0F = "#ff7edb";
-    # };
-
-    # base16Scheme = {
-    #   base00 = "#1d2021";
-    #   base01 = "#282828";
-    #   base02 = "#3c3836";
-    #   base03 = "#504945";
-    #   base04 = "#bdae93";
-    #   base05 = "#d5c4a1";
-    #   base06 = "#ebdbb2";
-    #   base07 = "#fbf1c7";
-    #   base08 = "#d43847";
-    #   base09 = "#b82c3b";
-    #   base0A = "#e55f4f";
-    #   base0B = "#c32d3a";
-    #   base0C = "#dd434e";
-    #   base0D = "#9f2231";
-    #   base0E = "#c72f44";
-    #   base0F = "#7c1a27";
+    #   base00 = "#0f0f0f";
+    #   base01 = "#191919";
+    #   base02 = "#262626";
+    #   base03 = "#393939";
+    #   base04 = "#4c4c4c";
+    #   base05 = "#cacaca";
+    #   base06 = "#e7e7e7";
+    #   base07 = "#f0f0f0";
+    #   base08 = "#ac8a8c";
+    #   base09 = "#ceb188";
+    #   base0A = "#aca98a";
+    #   base0B = "#8aac8b";
+    #   base0C = "#8aabac";
+    #   base0D = "#8f8aac";
+    #   base0E = "#ac8aac";
+    #   base0F = "#ac8a8c";
     # };
 
     targets = {
@@ -96,7 +75,8 @@ in
       sansSerif = font;
       emoji = font;
       monospace = {
-        name = "JetBrainsMono NF";
+        # name = "Gintronic";
+        name = "DankMono Nerd Font";
       };
     };
 

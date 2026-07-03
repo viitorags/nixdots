@@ -21,7 +21,6 @@
     ./flatpak.nix
     ./docker.nix
     ./steam.nix
-    ./hyprland.nix
     ./waydroid.nix
   ];
 }

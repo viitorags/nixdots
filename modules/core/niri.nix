@@ -8,4 +8,6 @@
     enable = true;
     package = unstable.niri;
   };
+
+  services.piri.enable = true;
 }

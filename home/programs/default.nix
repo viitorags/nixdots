@@ -8,7 +8,6 @@
     # ./starship
     ./stylix
     ./niri
-    ./hyprland
     ./noctalia
     ./wezterm
     ./sioyek
@@ -17,9 +16,8 @@
     ./lazygit
     ./vesktop
     ./rclone
-    ./alacritty
-    ./foot
     ./kitty
     ./zen-browser
+    ./fontconfig
   ];
 }

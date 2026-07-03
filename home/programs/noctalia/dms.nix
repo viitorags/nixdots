@@ -8,7 +8,8 @@
 {
   programs.dank-material-shell = {
     enable = false;
-    quickshell.package = inputs.quickshell.packages."${pkgs.stdenv.hostPlatform.system}".default;
+    # quickshell.package = inputs.quickshell.packages."${pkgs.stdenv.hostPlatform.system}".default;
+    quickshell.package = unstable.quickshell;
     dgop.package = unstable.dgop;
 
     systemd = {

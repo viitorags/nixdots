@@ -18,6 +18,7 @@ let
     docker
     docker-compose
     iptables
+    usbutils
   ];
 
   desktopPackages = with pkgs; [

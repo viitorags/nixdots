@@ -6,9 +6,10 @@
 }:
 {
   extraPackages = with pkgs; [
-    mynvim.packages.${stdenv.hostPlatform.system}.nvim
+    mynvim.packages.${stdenv.hostPlatform.system}.neovim
     fd
     jq
+    rustlings
     ripgrep
     shellcheck
     gnumake
@@ -46,9 +47,15 @@
     rustc
     pkg-config
     clippy
-    openssl
+    openssl.dev
     python3
     android-tools
+    gum
+    wrapGAppsHook4
+    cargo-tauri
+    librsvg.dev
+    webkitgtk_4_1.dev
+    glib.dev
   ];
 
   devShells = {
