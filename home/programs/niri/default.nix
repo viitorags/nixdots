@@ -113,11 +113,6 @@
       spawn-at-startup = [
         { argv = [ "dbus-update-activation-environment --systemd --all" ]; }
         { argv = [ "eval $(gnome-keyring-daemon --start --components=pkcs11,secrets,ssh,gpg)" ]; }
-        {
-          argv = [
-            "${pkgs.polkit_gnome}/bin/polkit-gnome-authentication-agent-1"
-          ];
-        }
         { argv = [ "xwayland-satellite" ]; }
         { argv = [ "wl-paste --type text --watch cliphist store" ]; }
         { argv = [ "wl-paste --type image --watch cliphist store" ]; }

@@ -6,7 +6,7 @@
     alsa.support32Bit = true;
     pulse.enable = true;
     wireplumber.enable = true;
-    jack.enable = true;
+    jack.enable = false;
     # extraConfig.pipewire."99-disable-bell" = {
     #   "context.modules" = [
     #     {
