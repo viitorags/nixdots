@@ -22,28 +22,28 @@ in
       };
 
       bar.default = {
-        position = "right";
-        thickness = 42;
-        margin_ends = 0;
-        margin_edge = 0;
-        radius = 0;
+        position = "top";
+        # thickness = 42;
+        # margin_ends = 0;
+        # margin_edge = 0;
+        radius = 12;
         scale = 1.20;
-        border = "secondary";
-        border_width = 0;
-        background_opacity = 0.80;
+        # border = "secondary";
+        # border_width = 0;
+        background_opacity = 0.8;
         capsule = true;
-        capsule_opacity = 0.80;
+        capsule_opacity = 0.5;
         padding = 8;
-        start = [ "workspaces" ];
+        start = [ "media" ];
         center = [
           "clock"
-          "spacer_2"
         ];
         end = [
           "tray"
-          "media"
+          "notes"
+          "wallhaven"
+          "recorder"
           "ram"
-          "screen_recorder"
           "notifications"
           "network"
           "bluetooth"
@@ -53,13 +53,37 @@ in
         ];
       };
 
+      bar.left = {
+        position = "left";
+        # thickness = 42;
+        margin_ends = 300;
+        margin_edge = 0;
+        radius = 12;
+        # radius_top_left = 0;
+        # radius_top_right = 12;
+        # radius_bottom_left = 0;
+        # radius_bottom_right = 12;
+        scale = 1.20;
+        border = "secondary";
+        border_width = 0;
+        background_opacity = 0.8;
+        capsule = true;
+        capsule_opacity = 0.5;
+        padding = 8;
+        start = [ ];
+        center = [
+          "workspaces"
+        ];
+        end = [ ];
+      };
+
       backdrop = {
         enabled = true;
       };
 
       wallpaper = {
         enabled = true;
-        directory = "${homeDir}/dotfiles/assets/wallpapers";
+        directory = "${homeDir}/Pictures/Wallpapers";
       };
 
       shell = {

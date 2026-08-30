@@ -11,7 +11,7 @@
 
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixpkgs-unstable";
 
-    mynvim.url = "github:vytorags/nvim_dots";
+    mynvim.url = "github:viitorags/nvim_dots";
 
     stylix.url = "github:nix-community/stylix/release-26.05";
 
@@ -35,8 +35,8 @@
     };
 
     noctalia = {
-      url = "github:noctalia-dev/noctalia";
-      inputs.nixpkgs.follows = "nixpkgs-unstable";
+      url = "github:noctalia-dev/noctalia/cachix";
+      # inputs.nixpkgs.follows = "nixpkgs-unstable";
     };
 
     dms = {
@@ -73,6 +73,16 @@
 
     piri = {
       url = "github:Asthestarsfalll/piri";
+    };
+
+    zjstatus = {
+      url = "github:dj95/zjstatus";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    wallpapers = {
+      url = "github:viitorags/wallpapers";
+      flake = false;
     };
   };
 
@@ -118,6 +128,7 @@
           pkgs
           unstable
           mynvim
+          lib
           ;
       };
     in
@@ -134,13 +145,12 @@
               ;
           };
           modules = [
-            ./modules/configuration.nix
+            ./system
             nur.modules.nixos.default
             inputs.stylix.nixosModules.stylix
             inputs.nix-flatpak.nixosModules.nix-flatpak
             inputs.mangowm.nixosModules.mango
             inputs.agenix.nixosModules.default
-            inputs.dms.nixosModules.dank-material-shell
             inputs.silentSDDM.nixosModules.default
             inputs.piri.nixosModules.default
             home-manager.nixosModules.home-manager
@@ -198,7 +208,6 @@
                   inputs.niri-flake.homeModules.niri
                   inputs.stylix.homeModules.stylix
                   noctalia.homeModules.default
-                  inputs.dms.homeModules.dank-material-shell
                   inputs.mangowm.hmModules.mango
                 ];
                 home.packages = dev.extraPackages;

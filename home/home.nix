@@ -4,6 +4,7 @@
   unstable,
   lib,
   vars,
+  inputs,
   ...
 }:
 let
@@ -26,7 +27,7 @@ in
       gpu-screen-recorder
       prismlauncher
       labymod-launcher
-      lunar-client
+      unstable.lunar-client
       unstable.xournalpp
       (callPackage ../pkgs/audiorelay/package.nix { })
       (callPackage ../pkgs/niri-sidebar/package.nix { })
@@ -34,7 +35,6 @@ in
       mpvpaper
       swappy
       awww
-      kdePackages.qt5compat
       (writeShellApplication {
         name = "minecraft";
         runtimeInputs = [
@@ -50,8 +50,6 @@ in
       deskflow
       wf-recorder
       gifski
-      grim
-      slurp
       zbar
       translate-shell
       tesseract
@@ -151,4 +149,17 @@ in
   };
 
   qt.enable = true;
+
+  home.file."Pictures/Wallpapers" = {
+    source = "${inputs.wallpapers}/gruvbox";
+    recursive = true;
+  };
+
+  home.activation.cloneNvim = lib.hm.dag.entryAfter [ "writeBoundary" ] ''
+    if [ ! -d "$HOME/.config/nvim" ]; then
+      ${pkgs.git}/bin/git clone \
+        https://github.com/viitorags/nvim_dots.git \
+        "$HOME/.config/nvim"
+    fi
+  '';
 }

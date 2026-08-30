@@ -49,7 +49,7 @@
       prefer-no-csd = true;
 
       layout = {
-        gaps = 6;
+        gaps = 4;
 
         center-focused-column = "never";
 
@@ -86,12 +86,12 @@
           color = "#0007";
         };
 
-        struts = {
-          # //left 64
-          # // right 64
-          # // top 64
-          # // bottom 64
-        };
+        # struts = {
+        #   left = 6;
+        #   right = 6;
+        #   top = 6;
+        #   bottom = 6;
+        # };
       };
 
       blur = {

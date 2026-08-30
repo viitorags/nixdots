@@ -5,6 +5,7 @@
       ouch
       glow
       ripdrag
+      unar
     ];
   };
 
@@ -50,6 +51,11 @@
           on = "<C-s>";
           run = "plugin kdeconnect-send";
           desc = "Send selected files via KDE Connect";
+        }
+        {
+          on = "<Enter>";
+          run = "plugin wise-enter";
+          desc = "Wise enter";
         }
       ];
     };
@@ -338,6 +344,8 @@
       ouch = yaziPlugins.ouch;
       rich-preview = yaziPlugins.rich-preview;
       yatline = yaziPlugins.yatline;
+      # smart-enter = yaziPlugins.smart-enter;
+      wise-enter = ./plugins/wise-enter.yazi;
       # glow = yaziPlugins.glow;
       kdeconnect-send = ./plugins/kdeconnect-send.yazi;
     };

@@ -6,15 +6,28 @@
   ...
 }:
 {
+
+  imports = [
+    inputs.dms.homeModules.dank-material-shell
+    inputs.dms.homeModules.niri
+  ];
+
   programs.dank-material-shell = {
     enable = false;
     # quickshell.package = inputs.quickshell.packages."${pkgs.stdenv.hostPlatform.system}".default;
-    quickshell.package = unstable.quickshell;
-    dgop.package = unstable.dgop;
+    # quickshell.package = unstable.quickshell;
+    # dgop.package = unstable.dgop;
 
     systemd = {
       enable = true;
       restartIfChanged = true;
+    };
+
+    niri.includes = {
+      enable = true;
+      filesToInclude = [
+        "wpblur"
+      ];
     };
 
     # enableSystemMonitoring = true;

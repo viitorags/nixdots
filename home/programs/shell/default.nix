@@ -30,7 +30,7 @@
 
     oh-my-zsh = {
       enable = true;
-      theme = "kphoen";
+      theme = "";
     };
   };
 }

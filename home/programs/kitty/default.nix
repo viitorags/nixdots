@@ -14,8 +14,8 @@ in
     shellIntegration.enableZshIntegration = true;
 
     font = lib.mkForce {
-      name = "${font.name} SemiBold";
-      size = 15;
+      name = "${font.name}";
+      size = 14;
     };
 
     shellIntegration.mode = "no-cursor";
@@ -27,8 +27,8 @@ in
       bold_italic_font = "${font.name} Bold Italic";
       # font_features = "${font.name} +calt +liga +dlig +ss01 +ss02 +ss03 +ss04 +ss05 +ss06 +ss07 +ss08";
       font_features = "none";
-      # modify_font = "cell_width 110%";
-      cursor_blink_interval = "0.5";
+      modify_font = "cell_width 110%";
+      cursor_blink_interval = "0";
       cursor_stop_blinking_after = "0";
       cursor_trail = 3;
       cursor_trail_decay = "0.1 0.4";

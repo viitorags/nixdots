@@ -7,7 +7,7 @@
     "Mod+Shift+Slash".action = show-hotkey-overlay;
 
     "Mod+Return".action = spawn [
-      "kitty"
+      "wezterm"
     ];
     "Mod+Shift+Return".action = spawn-sh [
       "piri scratchpads term toggle"
@@ -37,15 +37,16 @@
       "session"
     ];
     "Mod+C".action = spawn [
-      "kitty"
+      "wezterm"
       "-e"
       "zsh"
       "-ic"
       "nvim"
     ];
     "Mod+E".action = spawn [
-      "kitty"
-      "-e"
+      "wezterm"
+      "start"
+      "--"
       "yazi"
     ];
     "Mod+B".action = spawn [ "zen-beta" ];

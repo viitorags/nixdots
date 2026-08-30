@@ -2,6 +2,7 @@
   pkgs,
   unstable,
   mynvim,
+  lib,
   ...
 }:
 {
@@ -15,6 +16,14 @@
     gnumake
     lazygit
     claude-code
+    codex
+    libwebp
+    persepolis
+    aria2
+    telegram-bot-api
+    p7zip
+    payload-dumper-go
+    rtk
     nodejs
     dbeaver-bin
     flyctl

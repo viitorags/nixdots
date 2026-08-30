@@ -5,19 +5,22 @@
     ./yazi
     ./btop
     ./shell
-    # ./starship
+    ./starship
     ./stylix
     ./niri
     ./noctalia
     ./wezterm
+    ./alacritty
+    ./kitty
+    ./foot
     ./sioyek
     ./fastfetch
     ./cava
     ./lazygit
     ./vesktop
     ./rclone
-    ./kitty
     ./zen-browser
     ./fontconfig
+    ./git
   ];
 }

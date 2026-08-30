@@ -30,10 +30,10 @@
           };
 
           geometry-corner-radius = {
-            bottom-left = 15.0;
-            bottom-right = 15.0;
-            top-left = 15.0;
-            top-right = 15.0;
+            bottom-left = 12.0;
+            bottom-right = 12.0;
+            top-left = 12.0;
+            top-right = 12.0;
           };
           clip-to-geometry = true;
         }
